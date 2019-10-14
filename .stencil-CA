@@ -1,0 +1,25 @@
+# CAD
+{
+  "normalStoreUrl": "https://www.nowthatslingerie.ca",
+  "port": "3001",
+  "accessToken": "7d5pf916k7cfh4ac4b0d1ommjdlidyz",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
+
+#US
+{
+  "normalStoreUrl": "https://www.nowthatslingerie.com",
+  "port": "3001",
+  "accessToken": "qse6uj1dulqg009p58siwejkadlenxa",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
