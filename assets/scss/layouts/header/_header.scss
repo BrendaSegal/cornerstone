@@ -72,9 +72,8 @@
     }
 
     @include breakpoint("medium") {
-        height: auto;
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
+        height: auto;
 
         .header.fixed & {
             background-color: color("greys", "lightest");
@@ -97,7 +96,8 @@
         position: relative;
         text-decoration: none;
         width: 70%;
-        z-index: zIndex("low");
+        z-index: -1;
+        // z-index: zIndex("low");
 
         @include breakpoint("medium") {
             background: none;
@@ -179,6 +179,7 @@
     @include breakpoint("medium") {
         min-height: get-height(stencilString("logo_size"));
     }
+    z-index: -1;
 }
 
 .header-logo-image-container::after {
@@ -193,6 +194,7 @@
 
     @include breakpoint("medium") {
         max-height: none;
+        position: static;
     }
 }
 

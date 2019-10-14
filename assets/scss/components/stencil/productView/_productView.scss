@@ -283,6 +283,9 @@
     @include clearfix;
     margin-bottom: spacing("single");
     text-align: center;
+    overflow: hidden; // for Androind Chrome horizontal scroll fix
+    padding: 2px;
+    margin-left: 2px;
 
     @include breakpoint("small") {
         text-align: left;
