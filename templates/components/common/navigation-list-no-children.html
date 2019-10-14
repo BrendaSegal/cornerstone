@@ -1,0 +1,33 @@
+{{#if children}}
+<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+   href="{{url}}"
+   data-collapsible="navPages-{{id}}"
+>
+    {{name}}
+    <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use xlink:href="#icon-chevron-down" /></svg>
+    </i>
+</a>
+<div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
+    <ul class="navPage-subMenu-list">
+        {{#each children}}
+            <li class="navPage-subMenu-item">
+                <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}} navPage-subMenu--brands" href="{{url}}"
+                    aria-label="{{name}}">
+                    {{name}}
+                </a>
+            </li>
+        {{/each}}
+        <li class="navPage-subMenu-item">
+            <a class="navPage-subMenu-action navPages-action navPage-subMenu--brands" href="{{url}}">{{lang 'category.view_all.name' category=name}}</a>
+        </li>
+    </ul>
+</div>
+{{else}}
+<a class="navPages-action{{#if is_active}} activePage{{/if}}"
+   href="{{url}}"
+   aria-label="{{name}}"
+>
+    {{name}}
+</a>
+{{/if}}
