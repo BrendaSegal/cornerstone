@@ -32,19 +32,17 @@ category:
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
+        <aside class="filters">
             {{> components/category/sidebar}}
+
+            <div id="faceted-search-container"></div>
         </aside>
     {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
+        <aside class="filters">
             {{> components/category/sidebar}}
+
+            <div id="faceted-search-container"></div>
         </aside>
-    {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
-        {{/if}}
     {{/if}}
 
     <div class="page-content" id="product-listing-container">

@@ -141,6 +141,25 @@
             <dl class="productView-info">
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
                 <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
+
+                {{#if product.brand.name '==' 'Parfait'}}
+                <dt class="productView-info-name"></dt>
+                <dd class="productView-info-value">
+                    <span style="color:red">
+                        Parfait products are listed in <b>UK sizes</b>.  The band is the same,
+                        but the cup size is different. Please refer to the
+                        <a href="/size-chart-parfait/" target="_blank">size chart</a> 
+                        for cup size conversion.
+                    </span>
+                </dd>
+                {{/if}}
+                <dt class="productView-info-name">Size Chart:</dt>
+                <dd class="productView-info-value">
+                    <a href="/size-chart-{{#replace "'" (hyphenate (lowercase product.brand.name)) }}{{else}}{{ hyphenate (lowercase product.brand.name) }}{{/replace}}/" target="_blank">
+                    {{product.brand.name}}'s Size Chart
+                    </a>
+                </dd>
+
                 <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
                 <dd class="productView-info-value" data-product-upc>{{product.upc}}</dd>
                 {{#if product.condition}}
