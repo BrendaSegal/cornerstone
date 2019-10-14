@@ -2,3 +2,9 @@
 <dt class="productView-info-name">{{name}}:</dt>
 <dd class="productView-info-value">{{{value}}}</dd>
 {{/each}}
+<dt class="productView-info-name">Size Chart: </dt>
+<dd class="productView-info-value">
+  <a href="/size-chart-{{#replace "'" (hyphenate (lowercase product.brand.name)) }}{{else}}{{ hyphenate (lowercase product.brand.name) }}{{/replace}}/" target="_blank">
+    {{product.brand.name}}'s Size Chart
+  </a>
+</dd>

@@ -1,14 +1,20 @@
 <nav>
     {{#if category.subcategories}}
-        <div class="sidebarBlock">
-            <h2 class="sidebarBlock-heading">{{category.name}}</h2>
-            <ul class="navList">
-                {{#each category.subcategories}}
-                <li class="navList-item">
-                    <a class="navList-action" href="{{url}}" title="{{name}}">{{name}}</a>
-                </li>
-                {{/each}}
-            </ul>
+        <div class="filters__item">
+            <details class="filters__disclosure">
+                <summary class="filters__summary">
+                    Shop by Category
+                    <span class="filters__caret filters__caret--closed">▼</span>
+                    <span class="filters__caret filters__caret--open">▲</span>
+                </summary>
+                <ul class="filters__list navList">
+                    {{#each category.subcategories}}
+                    <li class="navList-item">
+                        <a class="navList-action" href="{{url}}" title="{{name}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </details>
         </div>
     {{/if}}
 

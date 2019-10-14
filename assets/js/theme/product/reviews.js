@@ -26,7 +26,7 @@ export default class {
         }
 
         this.injectPaginationLink();
-        this.setupReviews();
+        // this.setupReviews();
     }
 
     /**

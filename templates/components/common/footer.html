@@ -12,6 +12,32 @@
 <footer class="footer" role="contentinfo">
     <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
     <div class="container">
+        <!--Begin Campaigner form-->
+        <div id="mc_embed_signup">
+            <form name="previewForm" method="post" id="previewForm" class="validate js-camp-form" enctype="multipart/form-data" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                    <div class="mc-subscribe-heading">Join now & receive 15% OFF your next order</div>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL-footer">Email Address <span class="asterisk">*</span> </label>
+                        <input id="mce-EMAIL-footer"
+                            name="9566643"
+                            type="email"
+                            pattern="[^ @]*@[^ @]*"
+                            maxlength="4000"
+                            class="required email"
+                            contactattributeid="9566643"
+                            required
+                        >
+                        <button class="button" id="campaignerSubmit">Subscribe</button>
+                        <div class="validation validation--success" data-validation-success>You have been subscribed to the newsletter.</div>
+                        <div class="validation validation--error" data-validation-error>Something went wrong, please try again later.</div>
+                    </div>
+                    <div id="mce-responses" class="clear">&nbsp;</div>
+                </div>
+            </form>
+        </div>
+        <!--end Campaigner form-->
+
         {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
             <article class="footer-info-col
                 footer-info-col--social
@@ -30,6 +56,12 @@
                             <a href="{{url}}">{{name}}</a>
                         </li>
                     {{/each}}
+                    <li>
+                        <a href="/international-size-chart/">International Size Chart</a>
+                    </li>
+                    <li>
+                        <a href="/lingerie-glossary/">Lingerie Glossary</a>
+                    </li>
                     <li>
                         <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
                     </li>
@@ -53,7 +85,7 @@
                 <ul class="footer-info-list">
                     {{#each shop_by_brand}}
                         <li>
-                            <a href="{{url}}">{{name}}</a>
+                          <a href="/brands/{{#replace "'" (hyphenate (lowercase name)) }}{{else}}{{ hyphenate (lowercase name) }}{{/replace}}">{{name}}</a>
                         </li>
                     {{/each}}
                     <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
@@ -63,18 +95,35 @@
 
             {{#if settings.address}}
             <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h3 class="footer-info-heading">{{lang 'footer.info'}}</h3>
-                <address>{{nl2br settings.address}}</address>
+                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
                 {{#if settings.phone_number}}
                     <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
                 {{/if}}
+                <ul class="footer-info-list">
+                    <li>
+                        <a href="/contact-us">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="/about-us">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/shipping-returns-exchanges">Shipping & Returns</a>
+                    </li>
+                    <li>
+                        <a href="/privacy-and-security">Privacy & Security</a>
+                    </li>
+                    <li>
+                        <a href="/disclaimer">Disclaimer</a>
+                    </li>
+                    <li><span id="google_translate_element"></span></li>
+                </ul>
             </article>
             {{/if}}
 
             <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
+                <!--{{#if settings.show_newsletter_box}}
                     {{> components/common/subscription-form}}
-                {{/if}}
+                {{/if}}-->
                 {{> components/common/payment-icons}}
             </article>
         </section>
