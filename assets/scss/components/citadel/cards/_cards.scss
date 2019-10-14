@@ -63,16 +63,25 @@
     display: $card-figcaption-body-display;
     pointer-events: all; // 1
     transform: translate3d(0, -50%, 0); // 2
+
+    .button {
+        width: 100%;
+
+        &:focus {
+            background: rgb(102, 0, 153);
+            color: #ffffff;
+        }
+    }
 }
 
 .card-image {
     @include lazy-loaded-img;
     border: 0;
-    /* Object-fit polyfill */
-    font-family: "object-fit: contain;";
-    max-height: 100%;
-    object-fit: contain;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Object-fit polyfill */
+    font-family: 'object-fit: cover;';
 }
 
 .card-title {
