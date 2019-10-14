@@ -10,14 +10,6 @@
 </a>
 <div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
     <ul class="navPage-subMenu-list">
-        <li class="navPage-subMenu-item">
-            <a class="navPage-subMenu-action navPages-action"
-               href="{{url}}"
-               aria-label="{{lang 'category.view_all.name' category=name}}"
-            >
-                {{lang 'category.view_all.name' category=name}}
-            </a>
-        </li>
         {{#each children}}
             <li class="navPage-subMenu-item">
                 {{#if children}}
@@ -39,14 +31,11 @@
                     </a>
                     <ul class="navPage-childList" id="navPages-{{id}}">
                         {{#each children}}
-                        <li class="navPage-childList-item">
-                            <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
-                               href="{{url}}"
-                               aria-label="{{name}}"
-                            >
-                                {{name}}
-                            </a>
-                        </li>
+                            {{#if @index '<' 4}}
+                                <li class="navPage-childList-item">
+                                    <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+                                </li>
+                            {{/if}}
                         {{/each}}
                     </ul>
                 {{else}}
@@ -59,6 +48,9 @@
                 {{/if}}
             </li>
         {{/each}}
+        <li class="navPage-subMenu-item">
+            <a class="navPage-subMenu-action navPages-action" href="{{url}}">{{lang 'category.view_all.name' category=name}}</a>
+        </li>
     </ul>
 </div>
 {{else}}

@@ -41,6 +41,16 @@
 
         {{{head.scripts}}}
 
+        {{#withFirst currency_selector.currencies}}
+            {{#withFirst (split this.switch_url "?")}}
+                {{#withLast (split this ../../settings.base_url)}}
+           <link href="https://www.nowthatslingerie.com/{{chop this }}" rel="alternate" hreflang="en">
+           <link href="https://www.nowthatslingerie.ca/{{chop this }}" rel="alternate" hreflang="en-CA">
+           <link href="https://www.nowthatslingerie.ca/{{chop this }}" rel="alternate" hreflang="fr-CA">
+           <link href="https://www.nowthatslingerie.com/{{chop this }}" rel="alternate" hreflang="x-default">
+                {{/withLast}}
+            {{/withFirst}}
+        {{/withFirst}}
 
         {{~inject 'zoomSize' theme_settings.zoom_size}}
         {{~inject 'productSize' theme_settings.product_size}}
@@ -55,7 +65,7 @@
         {{~inject 'template' template}}
         {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
         {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
-        {{~inject 'validationDefaultDictionaryJSON' (langJson 'default_messages')}} 
+        {{~inject 'validationDefaultDictionaryJSON' (langJson 'default_messages')}}
     </head>
     <body>
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
