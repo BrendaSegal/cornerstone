@@ -22,7 +22,7 @@
         .card-figcaption {
             opacity: 1;
         }
-    }    
+    }
 }
 
 .card-figure {
@@ -65,6 +65,15 @@
     display: $card-figcaption-body-display;
     pointer-events: all; // 1
     transform: translate3d(0, -50%, 0); // 2
+
+    .button {
+        width: 100%;
+
+        &:focus {
+            background: rgb(102, 0, 153);
+            color: #ffffff;
+        }
+    }
 }
 
 .card-image {
