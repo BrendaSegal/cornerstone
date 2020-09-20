@@ -308,3 +308,14 @@
 .mc-field-group .email.valid ~ .validation {
     display: block;
 }
+
+.ntl-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ntl-logo-link__image {
+  max-width: 200px;
+}

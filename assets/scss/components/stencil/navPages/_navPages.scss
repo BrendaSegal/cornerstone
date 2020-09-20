@@ -45,8 +45,7 @@
     -webkit-overflow-scrolling: touch;
     position: absolute;
     right: 0;
-    z-index: 21;
-    // z-index: zIndex("lower");
+    z-index: zIndex("lower");
 
     @include breakpoint("medium") {
         background: transparent;
